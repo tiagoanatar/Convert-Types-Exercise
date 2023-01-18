@@ -1,8 +1,6 @@
-## Live demo
+## Info
 
-https://iridescent-rugelach-fe0236.netlify.app/
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Please access file app/page.tsx to check the function and mock data.
 
 ## Getting Started
 
