@@ -49,7 +49,7 @@ export default function Home() {
 
   function generateTestData(): Chat {
     return {
-      title: 'Test Chat',
+      title: 'Test Data',
       nodesList: [
         {
           firsName: 'John',
@@ -89,29 +89,19 @@ export default function Home() {
     <div className={styles.container}>
         <h1>Converted Data Sample - {data?.Title}</h1>
         {data?.ChatItems?.length > 0 ? (
-          data?.ChatItems.map((item) => {
+          data?.ChatItems.map((item, index) => {
             return (
-              <table>
-	<thead>
-		<tr>
-			<td>FirsName</td>
-			<td>LastName</td>
-			<td>Age</td>
-			<td>BirthDate.seconds</td>
-			<td>BirthDate.nanos</td>
-			<td>ShoppingItems.Title</td>
-			<td>ShoppingItems.Price</td>
-			<td>ShoppingItems.Currency</td>
-			<td>ShoppingItems.Date.seconds</td>
-			<td>ShoppingItems.Date.nanos</td>
-			<td>ShoppingItems.Title</td>
-			<td>ShoppingItems.Price</td>
-			<td>ShoppingItems.Currency</td>
-			<td>ShoppingItems.Date.seconds</td>
-			<td>ShoppingItems.Date.nanos</td>
-		</tr>
-	</thead>
-</table>
+              <section key={index+'main'}>
+                {item?.FirsName + ' ' + item?.LastName} Age: {item?.Age}
+                <hr />
+                {item?.ShoppingItems.map((product, productIndex) => {
+                  return (
+                    <p key={productIndex+'sub'}>
+                      {product.Title}, {product.Price}, {product.Currency}, {product.Date.seconds}
+                    </p>
+                  )
+                })}
+              </section>
             )
           })
         ) : null}
